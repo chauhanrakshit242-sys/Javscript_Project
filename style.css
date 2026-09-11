@@ -1,0 +1,191 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(168, 41, 41, 0.512);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#container {
+    border: 2px solid black;
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: rgba(33, 169, 12, 0.5);
+    padding-top: 1px;
+}
+
+#header {
+    background-color: rgba(216, 186, 15, 0.5);
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#counter {
+    background-color: rgba(15, 150, 87, 0.686);
+    border: 2px solid black;
+    text-align: center;
+
+    margin: 20px 50px;
+
+    border-radius: 10px;
+    font-size: large;
+    height: 100px;
+    width: 300px;
+    font-weight: bolder;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#count {
+    font-size: 24px;
+
+    /* Counter number animation */
+    transition: transform 0.2s ease;
+}
+
+#buttons {
+    background-color: rgba(131, 246, 37, 0.91);
+    border: 2px solid black;
+    border-radius: 10px;
+
+    margin: 30px 10px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#increment,
+#decrement,
+#reset {
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 50px;
+
+    font-weight: bolder;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    /* Smooth transition */
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                opacity 0.2s ease;
+}
+
+/* Increment button */
+#increment {
+    background-color: rgb(18, 219, 18);
+}
+
+/* Decrement button */
+#decrement {
+    background-color: rgb(236, 45, 12);
+}
+
+/* Reset button */
+#reset {
+    background-color: rgb(223, 223, 12);
+    width: 100px;
+}
+
+/* Hover effect */
+#increment:hover,
+#decrement:hover,
+#reset:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Click effect */
+#increment:active,
+#decrement:active,
+#reset:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+```
+
+### What I changed
+
+**1. Fixed your border syntax**
+
+```css
+border: 2px,solid, black;
+```
+
+❌ Wrong
+
+```css
+border: 2px solid black;
+```
+
+✅ Correct
+
+**2. Changed**
+
+```css
+.
+```
+
+to:
+
+```css
+*
+```
+
+So the reset applies to **all elements**.
+
+**3. Added smooth transitions**
+
+```css
+transition: transform 0.2s ease,
+            box-shadow 0.2s ease,
+            opacity 0.2s ease;
+```
+
+**4. Added hover effect**
+
+```css
+button:hover {
+    transform: scale(1.05);
+}
+```
+
+**5. Added click effect**
+
+```css
+button:active {
+    transform: scale(0.95);
+}
+```
+
+**6. Used flexbox for the buttons**
+
+This makes the three buttons much easier to align and space:
+
+```css
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+```
+
+So you don't need all those individual `margin-left` and `margin-right` values anymore.
